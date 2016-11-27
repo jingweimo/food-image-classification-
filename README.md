@@ -3,7 +3,7 @@ ten-class food images and classification based on cnn in python
 
 
 
-images: train 4654 images (128*128*3) and test 1168 images (128*128*3)
+images: train 4654 images (128,128,3) and test 1168 images (128,128,3)
 
 apple:1050 
 
