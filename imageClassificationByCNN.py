@@ -32,8 +32,8 @@ datagen = ImageDataGenerator(
                              fill_mode='nearest')
 #from PIL import Image
 #img = Image.open('Test/apple/4.jpeg')
-img = load_img('D:\\Courses\\CSE803\\Final Project\\Images2\\apple\\1.jpeg')  # this is a PIL image
-img.save('C:\\Users\\Yuzhen Lu\\Desktop\\apple.jpeg')
+img = load_img('imagePath')  # this is a PIL image
+img.save('saveImagePath')
 plt.imshow(img)
 x = img_to_array(img)  # this is a Numpy array with shape (3, 128, 128)
 x = x.reshape((1,) + x.shape) 
@@ -73,8 +73,8 @@ def splitImageSet(rootFolder, outFolder, p):
             
     print 'Split Done!'
     return
-rootFolder = 'D:\\Courses\\CSE803\Final Project\\Images2'
-outFolder = 'D:\Courses\CSE803\Final Project\Python based\Data2'     
+rootFolder = 'rootFolder' #add the image directory
+outFolder = 'outFolder' #image output directory    
 splitImageSet(rootFolder, outFolder, 0.80)    
 
 #Please start from here!!
@@ -135,7 +135,7 @@ patience = 20
 earlystopper = EarlyStopping(monitor='val_acc', patience=patience, 
                              verbose=1, mode='max')       
 #check point
-wdir = 'D:\Courses\CSE803\Final Project\Python based' #work directory
+wdir = 'wdir' #work directory
 filepath = os.path.join(wdir,'modelWeights','cnnModelDEp80weights.best.hdf5') #save model weights
 checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, 
                              save_best_only=True, mode='max')
@@ -154,13 +154,13 @@ train_datagen = ImageDataGenerator(
                                    zoom_range=0.2,
                                    horizontal_flip=True)
 
-trainDir = 'D:\Courses\CSE803\Final Project\Python based\Data2\Train'
+trainDir = 'Data\Train'
 train_generator = train_datagen.flow_from_directory(trainDir,  
                                                     target_size=(128,128),
                                                     batch_size=32,
                                                     class_mode='categorical')
 test_datagen = ImageDataGenerator(rescale=1./255)  
-testDir = 'D:\Courses\CSE803\Final Project\Python based\Data2\Test'
+testDir = 'Data\Test'
 test_generator = test_datagen.flow_from_directory(testDir,
                                                   target_size=(128,128),
                                                   batch_size=32,
