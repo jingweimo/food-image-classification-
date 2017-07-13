@@ -1,3 +1,6 @@
+See the paper at: https://arxiv.org/abs/1612.00983
+
+
 # food-image-classification-
 ten-class food images and classification based on cnn in python
 
