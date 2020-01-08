@@ -17,7 +17,6 @@ Edit history:
       3): 90.34% for training and 90.41% for testing
       4): 93.08% for training and 89.98% for testing
   
-@author: Yuzhen Lu
 """
 
 from keras.preprocessing.image import ImageDataGenerator, img_to_array, load_img
